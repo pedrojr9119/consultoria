@@ -1,6 +1,7 @@
 package br.com.apr.sistema.config;
 
 import org.springframework.beans.BeansException;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,10 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
+import br.com.apr.sistema.entidade.Servico;
+
 @Configuration
+@EntityScan(basePackageClasses = Servico.class)
 public class MvcConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;

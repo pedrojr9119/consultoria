@@ -1,5 +1,7 @@
 package br.com.apr.sistema.entidade;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,9 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-public class Servico {
+public class Servico implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GenericGenerator(name = "servico_id", strategy = "increment")
@@ -17,13 +21,21 @@ public class Servico {
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 
-	@Column(name = "nome", nullable = false, unique = false)
-	@NotBlank(message = "Nome é Obrigatório")
+	@NotBlank(message = "Nome é obrigatório")
+	@Column(name = "nome", nullable = false)
 	private String nome;
 
-	@Column(name = "nome", nullable = false, unique = false)
-	@NotBlank(message = "Descrição é Obrigatório")
+	@NotBlank(message = "Descricao é obrigatório")
+	@Column(name = "descricao", nullable = false)
 	private String descricao;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
