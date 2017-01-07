@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 public class QuemSomos implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 201701071924L;
 
 	@Id
 	@GenericGenerator(name = "quem_somos_id", strategy = "increment")
