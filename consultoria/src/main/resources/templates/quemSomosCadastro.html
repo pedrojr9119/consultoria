@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>.: Quem Somos :.</title>
+	
+</head>
+
+<body>
+	<form class="form-horizontal"
+		th:action="@{/quemSomos/salvar}" method="POST" th:object="${quemSomos}">
+		<input type="hidden" th:field="*{id}" />
+
+		<div class="form-group">
+			<label for="quemSomos" class="col-sm-1">Quem Somos</label>
+			<div class="col-sm-8">
+				
+				<div>
+					<textarea rows="10" cols="60" autofocus="autofocus" class="form-control"
+						id="quemSomos" maxlength="1000" placeholder="Descrição"
+						th:field="*{descricao}"></textarea>
+				</div>
+			</div>
+		</div>
+		
+		<input type="submit" class="btn btn-primary" value="Salvar" />
+		
+	</form>
+</body>
+</html>
