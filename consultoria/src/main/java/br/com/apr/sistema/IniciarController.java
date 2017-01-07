@@ -8,12 +8,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class IniciarController {
 
 	private static final String PAGINA_NOME = "index";
+	private static final String PAGINA_QUEM_SOMOS_CADASTRO = "quemSomosCadastro";
 	
 	@GetMapping(value = "/index")
 	public ModelAndView iniciar() {
 		ModelAndView mv = new ModelAndView(PAGINA_NOME);
-		mv.addObject("teste", "tes123123123te");
-		mv.addObject("alan", "tes123123123tddddddddddddddddddddddddde");
+		mv.addObject("quemSomos", "quemSomos");
+		return mv;
+	}
+	
+	@GetMapping(value = "/quemSomosCadastro")
+	public ModelAndView quemSomosCadastro() {
+		ModelAndView mv = new ModelAndView(PAGINA_QUEM_SOMOS_CADASTRO);
 		return mv;
 	}
 }
